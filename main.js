@@ -1,5 +1,7 @@
 // main.js
 // main.js
+
+
 const canvas = document.querySelector('canvas');
 const context = canvas.getContext('2d');
 
@@ -38,14 +40,14 @@ function drawGrid() {
 
 function drawPlayer() {
   context.drawImage(Player.image, Player.col, Player.row);
-  // window.addEventListener('load', () => {
-  //   context.drawImage(Player.image, Player.col, Player.row);
-  // });
+  Player.image.addEventListener('load', () => {
+  context.drawImage(Player.image, Player.col, Player.row);
+ });
 }
 
 function drawTreasure() {
   context.drawImage(Treasure.image, Treasure.col, Treasure.row, 50, 50);
-  window.addEventListener('load', () => {
+  Treasure.image.addEventListener('load', () => {
     context.drawImage(Treasure.image, Treasure.col, Treasure.row, 50, 50);
     console.log('test');
   });
